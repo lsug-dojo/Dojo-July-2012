@@ -7,5 +7,6 @@ This is a basic Lift chat with group support. To run it, clone the repository an
 In sbt prompt:
 
 container:start
+
 ~compile
 
