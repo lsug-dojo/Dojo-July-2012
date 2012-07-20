@@ -12,7 +12,7 @@ import snippet.Message
  * message will be processed at once.
  */
 object ChatServer extends LiftActor with ListenerManager {
-  private var msgs = Vector(Message("Welcome", ""))
+  private var msgs = Vector[Message]()
   /**
    * When we update the listeners, what message do we send?
    * We send the msgs, which is an immutable data structure,

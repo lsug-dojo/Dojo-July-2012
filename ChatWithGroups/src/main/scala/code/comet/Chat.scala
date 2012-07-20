@@ -32,8 +32,8 @@ class Chat extends CometActor with CometListener with Logger {
    * Put the messages in the li elements and clear
    * any elements that have the clearable class.
    */
-  def render = "li *" #> msgs.filter(message => group.map(_ == message.group).getOrElse(true))
-    .map(message => message.group + ":" + message.message) &
+  def render = "li" #> msgs.filter(message => group.map(_ == message.group).getOrElse(true))
+    .map(_.message + "Bla").map(msg => <li>{msg}</li>) &
     ("#chatrooms" #> SHtml.ajaxSelect(msgs.map(_.group).map(a => (a, a)).toSet.toSeq, group,
     selected => { group = Some(selected); reRender(); JsCmds.Noop; })) &
   ClearClearable

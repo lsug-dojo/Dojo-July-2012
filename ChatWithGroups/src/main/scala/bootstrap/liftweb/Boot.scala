@@ -12,11 +12,6 @@ import mapper._
 
 import code.model._
 
-
-/**
- * A class that's instantiated early and run.  It allows the application
- * to modify lift's environment
- */
 class Boot {
   def boot {
         // where to search snippet
@@ -24,7 +19,7 @@ class Boot {
 
     // Build SiteMap
     def sitemap = SiteMap(
-//      Menu.i("Home") / "index" >> User.AddUserMenusAfter, // the simple way to declare a menu
+      Menu.i("Home") / "index", // the simple way to declare a menu
 
       // more complex because this menu allows anything in the
       // /static path to be visible
@@ -48,6 +43,5 @@ class Boot {
     // Use HTML5 for rendering
     LiftRules.htmlProperties.default.set((r: Req) =>
       new Html5Properties(r.userAgent))    
-
   }
 }
