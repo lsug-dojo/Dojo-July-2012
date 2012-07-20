@@ -1,6 +1,11 @@
 Getting started
 ===============
-This is a very basic Lift application. To run it, clone the repository and run
+This is a basic Lift chat with group support. To run it, clone the repository and run
 
-./gradlew jettyRun
+./sbt
+
+In sbt prompt:
+
+container:start
+~compile
 
